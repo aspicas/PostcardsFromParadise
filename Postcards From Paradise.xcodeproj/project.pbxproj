@@ -12,6 +12,7 @@
 		E4D680911FF42DD100125608 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4D6808F1FF42DD100125608 /* Main.storyboard */; };
 		E4D680931FF42DD100125608 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4D680921FF42DD100125608 /* Assets.xcassets */; };
 		E4D680961FF42DD100125608 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4D680941FF42DD100125608 /* LaunchScreen.storyboard */; };
+		E4D680A01FF4389D00125608 /* FontsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D6809F1FF4389D00125608 /* FontsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		E4D680921FF42DD100125608 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4D680951FF42DD100125608 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E4D680971FF42DD100125608 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4D6809F1FF4389D00125608 /* FontsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				E4D6808B1FF42DD100125608 /* AppDelegate.swift */,
 				E4D6808D1FF42DD100125608 /* ViewController.swift */,
 				E4D6808F1FF42DD100125608 /* Main.storyboard */,
+				E4D6809F1FF4389D00125608 /* FontsTableViewController.swift */,
 				E4D680921FF42DD100125608 /* Assets.xcassets */,
 				E4D680941FF42DD100125608 /* LaunchScreen.storyboard */,
 				E4D680971FF42DD100125608 /* Info.plist */,
@@ -137,6 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4D6808E1FF42DD100125608 /* ViewController.swift in Sources */,
+				E4D680A01FF4389D00125608 /* FontsTableViewController.swift in Sources */,
 				E4D6808C1FF42DD100125608 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
