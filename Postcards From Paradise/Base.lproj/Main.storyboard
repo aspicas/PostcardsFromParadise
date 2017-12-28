@@ -28,7 +28,7 @@
                                     <constraint firstAttribute="height" constant="50" id="Nef-8Y-RZI"/>
                                 </constraints>
                                 <inset key="scrollIndicatorInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DZ1-Ij-HVu">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DZ1-Ij-HVu">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -66,7 +66,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="J8M-9t-NL1" secondAttribute="trailing" constant="9" id="ope-ZE-WVZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="G62-2z-NTf" secondAttribute="trailing" constant="-16" id="qn9-Rc-t0b"/>
                             <constraint firstItem="J8M-9t-NL1" firstAttribute="leading" secondItem="vkM-QQ-LD5" secondAttribute="leadingMargin" constant="9" id="qq4-c5-k2P"/>
-                            <constraint firstItem="G62-2z-NTf" firstAttribute="top" relation="greaterThanOrEqual" secondItem="J8M-9t-NL1" secondAttribute="bottom" constant="75" id="tby-d3-vl4"/>
+                            <constraint firstItem="G62-2z-NTf" firstAttribute="top" relation="greaterThanOrEqual" secondItem="J8M-9t-NL1" secondAttribute="bottom" priority="250" constant="75" id="tby-d3-vl4"/>
                             <constraint firstItem="G62-2z-NTf" firstAttribute="leading" secondItem="vkM-QQ-LD5" secondAttribute="leadingMargin" constant="-16" id="wIn-aE-lgK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="w3G-iE-QOQ"/>
@@ -81,7 +81,7 @@
             </objects>
             <point key="canvasLocation" x="1077.5999999999999" y="359.37031484257875"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Fuentes disponibles-->
         <scene sceneID="3Y0-jc-GON">
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="rCf-UJ-2JK" customClass="FontsTableViewController" customModule="Postcards_From_Paradise" customModuleProvider="target" sceneMemberID="viewController">
@@ -97,7 +97,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OGS-V8-vjp">
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="OGS-V8-vjp">
                                             <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -113,7 +113,7 @@
                             <outlet property="delegate" destination="rCf-UJ-2JK" id="1gz-eW-IoX"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="Zvg-3e-lEH"/>
+                    <navigationItem key="navigationItem" title="Fuentes disponibles" id="Zvg-3e-lEH"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GJM-Q9-XtS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
