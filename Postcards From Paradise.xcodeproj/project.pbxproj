@@ -57,14 +57,22 @@
 			isa = PBXGroup;
 			children = (
 				E4D6808B1FF42DD100125608 /* AppDelegate.swift */,
-				E4D6808D1FF42DD100125608 /* ViewController.swift */,
+				E4D680A11FF5678500125608 /* Controllers */,
 				E4D6808F1FF42DD100125608 /* Main.storyboard */,
-				E4D6809F1FF4389D00125608 /* FontsTableViewController.swift */,
 				E4D680921FF42DD100125608 /* Assets.xcassets */,
 				E4D680941FF42DD100125608 /* LaunchScreen.storyboard */,
 				E4D680971FF42DD100125608 /* Info.plist */,
 			);
 			path = "Postcards From Paradise";
+			sourceTree = "<group>";
+		};
+		E4D680A11FF5678500125608 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E4D6808D1FF42DD100125608 /* ViewController.swift */,
+				E4D6809F1FF4389D00125608 /* FontsTableViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
