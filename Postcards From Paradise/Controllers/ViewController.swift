@@ -7,16 +7,13 @@
 //
 
 import UIKit
+import MobileCoreServices
 
 class ViewController: UIViewController,
                     UICollectionViewDataSource,
                     UICollectionViewDelegate,
                     UICollectionViewDragDelegate,
-UICollectionViewDropDelegate{
-    func collectionView(_ collectionView: UICollectionView, performDropWith coordinator: UICollectionViewDropCoordinator) {
-        <#code#>
-    }
-    
+                    UIDropInteractionDelegate{
     
     @IBOutlet weak var postcardImageView: UIImageView!
     @IBOutlet weak var colorCollectionView: UICollectionView!
@@ -47,7 +44,7 @@ UICollectionViewDropDelegate{
         self.colorCollectionView.dragDelegate = self
         
         self.postcardImageView.isUserInteractionEnabled = true
-        let dropInteraction = UIDropInteraction(delegate: self as! UIDropInteractionDelegate)
+        let dropInteraction = UIDropInteraction(delegate: self)
         self.postcardImageView.addInteraction(dropInteraction)
         
         renderPostcard()
@@ -132,5 +129,36 @@ UICollectionViewDropDelegate{
         let item = UIDragItem(itemProvider: itemProvider)
         return [item]
     }
-}
+    
+    // MARK: UIDropIntegrationDelegate
+    func dropInteraction(_ interaction: UIDropInteraction, sessionDidUpdate session: UIDropSession) -> UIDropProposal {
+        return UIDropProposal(operation: .copy)
+    }
+    
+    func dropInteraction(_ interaction: UIDropInteraction, performDrop session: UIDropSession) {
+        let dropLocation = session.location(in: self.postcardImageView)
+        
+        if session.hasItemsConforming(toTypeIdentifiers: [kUTTypePlainText as String]) {
+            //Se ejecutara si lo que hemos soltado es un String
+        } else if session.hasItemsConforming(toTypeIdentifiers: [kUTTypeImage as String]) {
+            //Se ejecutara si lo que hemos soltado es una imagen
+        } else {
+            //Se ejecutara si lo que hemos soltado es un color
+            session.loadObjects(ofClass: UIColor.self , completion:
+                { (items) in
+                    guard let color = items.first as? UIColor else {
+                        return
+                    }
+                    
+                    if dropLocation.y < self.postcardImageView.bounds.midY {
+                        self.topFontColor = color
+                    } else {
+                        self.bottomFontColor = color
+                    }
+                    
+                    self.renderPostcard()
+                })
+        }
+    }
 
+}
