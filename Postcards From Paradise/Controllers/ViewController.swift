@@ -169,4 +169,45 @@ class ViewController: UIViewController,
         }
     }
 
+    //MARK: Gesture Recognize
+    @IBAction func changeText(_ sender: UITapGestureRecognizer) {
+        //1. Encontrar la localizacion del tap dentro de la postal
+        let tapLocation = sender.location(in:  self.postcardImageView)
+        
+        //2. Decidir si el usuario tiene que cambiar la etiqueta superior o inferior
+        let changeTop = tapLocation.y < self.postcardImageView.bounds.midY ? true : false
+        
+        //3. Crear un objeto UIAlertController con un textField adicional para que el usuario escriba el texto.
+        let alert = UIAlertController(title: "Cambiar Texto", message: "Escribe el nuevo texto", preferredStyle: .alert)
+        alert.addTextField { (textField) in
+            textField.placeholder = "¿Qué quieres poner aquí?"
+            if changeTop {
+                textField.text = self.topText
+            } else {
+                textField.text = self.bottomText
+            }
+        }
+        
+        //4. Añadir accion 'Cambiar Texto' que cambie el texto pertinentemente y llame al metodo renderPostcard()
+        let changeAction = UIAlertAction(title: "Cambiar Texto", style: .default) { (_) in
+            guard let newtext = alert.textFields?[0].text else { return }
+            
+            if  changeTop {
+                self.topText = newtext
+            } else {
+                self.bottomText = newtext
+            }
+            
+            self.renderPostcard()
+        }
+        
+        //5. Añadir una opcion 'Cancelar' que pare el proceso.
+        let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
+        
+        //6. Mostrar la alert controller
+        alert.addAction(changeAction)
+        alert.addAction(cancelAction)
+        
+        self.present(alert, animated: true)
+    }
 }
