@@ -140,15 +140,23 @@ class ViewController: UIViewController,
         
         if session.hasItemsConforming(toTypeIdentifiers: [kUTTypePlainText as String]) {
             //Se ejecutara si lo que hemos soltado es un String
+            session.loadObjects(ofClass: NSString.self, completion:
+                { (items) in
+                    guard let fontName = items.first as? String else { return }
+                    if dropLocation.y < self.postcardImageView.bounds.midY {
+                        self.topFontName = fontName
+                    } else {
+                        self.bottomFontName = fontName
+                    }
+                    self.renderPostcard()
+            })
         } else if session.hasItemsConforming(toTypeIdentifiers: [kUTTypeImage as String]) {
             //Se ejecutara si lo que hemos soltado es una imagen
         } else {
             //Se ejecutara si lo que hemos soltado es un color
             session.loadObjects(ofClass: UIColor.self , completion:
                 { (items) in
-                    guard let color = items.first as? UIColor else {
-                        return
-                    }
+                    guard let color = items.first as? UIColor else { return }
                     
                     if dropLocation.y < self.postcardImageView.bounds.midY {
                         self.topFontColor = color
@@ -157,7 +165,7 @@ class ViewController: UIViewController,
                     }
                     
                     self.renderPostcard()
-                })
+            })
         }
     }
 
