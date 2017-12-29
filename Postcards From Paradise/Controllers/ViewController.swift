@@ -15,6 +15,17 @@ class ViewController: UIViewController, UICollectionViewDataSource, UITableViewD
     
     var colors = [UIColor]()
     
+    var image: UIImage?
+    
+    var topText = "Bienvenido a iOS 11"
+    var bottomText = "iOS 11 rules"
+    
+    var topFontName = "Avenir Next"
+    var bottomFontName = "Avenir Next"
+    
+    var topFontColor = UIColor.white
+    var bottomFontColor = UIColor.white
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.colors += [.black, .blue, .green, .yellow, .white, .gray, .red, .orange, .cyan, .purple, .magenta]
@@ -47,6 +58,27 @@ class ViewController: UIViewController, UICollectionViewDataSource, UITableViewD
         cell.layer.borderWidth = 1
         cell.layer.cornerRadius = 5
         return cell
+    }
+    
+    func renderPostcard(){
+        // 1. Definir la zona de dibujo rectangular para trabajar. 3000x2400
+        
+        // 2. Crear dos rectangulos para los dos textos de la postal
+        
+        // 3. A partir de los nombres de las fuentes, crear los objetos UIFont
+        // Dejaremos una fuente por defecto (Avenir Next) por si algo falla
+        
+        // 4. NSMutableParagraphStyle para centrar el texto en la etiqueta
+        
+        // 5. Definir la estructura de la etiqueta como el color y la fuente. (attributed strings (NSAttributedStringKey))
+        
+        // 6. Iniciar la renderizacion de la imagen (UIGraphicsImageRenderer)
+        
+            // 6.1 Renderizar la zona con un fondo gris
+        
+            // 6.2 Pintaremos la imagen seleccionada del usuario empezando por el borde superior izquierdo.
+        
+            // 6.3 Pintar las dos etiquetas de texto con los parámetros configurados en 5
     }
 }
 
