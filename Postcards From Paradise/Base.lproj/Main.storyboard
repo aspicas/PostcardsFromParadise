@@ -49,7 +49,7 @@
                                     <outlet property="delegate" destination="Ilb-Eu-P3l" id="sNd-Qh-DAp"/>
                                 </connections>
                             </collectionView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="J8M-9t-NL1">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="J8M-9t-NL1">
                                 <rect key="frame" x="25" y="203" width="325" height="260"/>
                                 <gestureRecognizers/>
                                 <constraints>
