@@ -51,6 +51,9 @@ class ViewController: UIViewController,
         let dragInteraction = UIDragInteraction(delegate: self)
         self.postcardImageView.addInteraction(dragInteraction)
         
+        self.title = "Postales desde el Paraiso"
+        splitViewController?.view.backgroundColor = UIColor.lightGray
+        
         renderPostcard()
     }
 
