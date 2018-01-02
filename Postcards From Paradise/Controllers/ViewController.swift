@@ -152,6 +152,12 @@ class ViewController: UIViewController,
             })
         } else if session.hasItemsConforming(toTypeIdentifiers: [kUTTypeImage as String]) {
             //Se ejecutara si lo que hemos soltado es una imagen
+            session.loadObjects(ofClass: UIImage.self, completion:
+                { (items) in
+                    guard let image = items.first as? UIImage else { return }
+                    self.image = image
+                    self.renderPostcard()
+            })
         } else {
             //Se ejecutara si lo que hemos soltado es un color
             session.loadObjects(ofClass: UIColor.self , completion:
