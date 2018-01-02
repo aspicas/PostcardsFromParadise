@@ -13,7 +13,8 @@ class ViewController: UIViewController,
                     UICollectionViewDataSource,
                     UICollectionViewDelegate,
                     UICollectionViewDragDelegate,
-                    UIDropInteractionDelegate{
+                    UIDropInteractionDelegate,
+                    UIDragInteractionDelegate{
     
     @IBOutlet weak var postcardImageView: UIImageView!
     @IBOutlet weak var colorCollectionView: UICollectionView!
@@ -46,6 +47,9 @@ class ViewController: UIViewController,
         self.postcardImageView.isUserInteractionEnabled = true
         let dropInteraction = UIDropInteraction(delegate: self)
         self.postcardImageView.addInteraction(dropInteraction)
+        
+        let dragInteraction = UIDragInteraction(delegate: self)
+        self.postcardImageView.addInteraction(dragInteraction)
         
         renderPostcard()
     }
@@ -173,6 +177,14 @@ class ViewController: UIViewController,
                     self.renderPostcard()
             })
         }
+    }
+    
+    //MARK: UIDragInteractionDelegate
+    func dragInteraction(_ interaction: UIDragInteraction, itemsForBeginning session: UIDragSession) -> [UIDragItem] {
+        guard let image = self.postcardImageView.image else { return [] }
+        let provider = NSItemProvider(object: image)
+        let item = UIDragItem(itemProvider: provider)
+        return [item]
     }
 
     //MARK: Gesture Recognize
